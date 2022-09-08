@@ -1,0 +1,12 @@
+#azul{
+    width: 50vw;
+    background-color: blue;
+}
+#vermelho{
+    height: 50vh;
+    background-color: red;
+}
+.imagem{
+    width: 50%;
+    height: 50%;
+}

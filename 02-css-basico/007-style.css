@@ -1,0 +1,23 @@
+#div1{
+    height: 450px;
+    background-image: url('./img/Fundo_abstrato.jpg');
+    background-size: contain;
+}
+#div11{
+    background-color: orange;
+    height: 450px;
+    background-image: url('./img/Fundo_abstrato.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#div2{
+    height: 450px;
+    background-image: url('./img/Fundo_abstrato.jpg');
+    background-size: auto;
+}
+#div3{
+    height: 450px;
+    background-image: url('./img/Fundo_abstrato.jpg');
+    background-size: cover;
+}

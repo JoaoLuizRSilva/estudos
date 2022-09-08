@@ -1,0 +1,42 @@
+#som{
+    font-size: 4em;
+    color: blue;
+    text-shadow: 2px 1px 2px black;
+}
+#cor{
+    color: red;
+}
+#pmai{
+    text-transform: capitalize;
+}
+#min{
+    text-transform: lowercase;
+}
+#mai{
+    text-transform: uppercase;
+}
+#dt{
+    text-decoration: underline overline line-through;
+}
+a{
+    text-decoration: none;
+    color: greenyellow;
+}
+#at{
+    text-align: center;
+}
+#tj{
+    text-align: justify;
+}
+#el{
+    letter-spacing: 5px;
+}
+#ep{
+    word-spacing: 10px;
+}
+#eli{
+    line-height: 2em;
+}
+#ip{
+    text-indent: 30px;
+}

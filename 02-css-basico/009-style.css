@@ -1,0 +1,8 @@
+.primeiro{
+    height: 500px;
+    background: linear-gradient(to right, red 20%, black, blue);
+}
+.segundo{
+    height: 500px;
+    background: linear-gradient(to right, red , 20%, black, blue);
+}
