@@ -1,0 +1,25 @@
+#primeira{
+    height: 100px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: blue red green yellow;
+}
+#segunda{
+    height: 100px;
+    background-color: black;
+    border-style: solid;
+    border-width: 20px;
+    border-radius: 5px 20px;
+}
+#terceira{
+    height: 100px;
+    border-width: 10px 20px;
+    border-style: dashed;
+    border-color: red blueviolet;
+}
+#circulo{
+    background-color: rgb(71, 21, 119);
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+}
