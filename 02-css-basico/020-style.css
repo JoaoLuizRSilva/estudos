@@ -1,0 +1,29 @@
+#primeira{
+    height: 100px;
+    width: 100px;
+    color: white;
+    background-color: blue;
+    padding: 10px;
+    border: 10px solid black;
+    box-sizing: border-box;
+    margin: 10px;
+}
+#segunda{
+    height: 100px;
+    width: 100px;
+    color: white;
+    background-color: rgb(78, 207, 106);
+    padding: 10px;
+    border: 10px solid black;
+    box-sizing: border-box;
+}
+#terceira{
+    height: 100px;
+    width: 100px;
+    color: white;
+    background-color: red;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
