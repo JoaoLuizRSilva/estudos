@@ -1,0 +1,6 @@
+li{
+    cursor: crosshair;
+}
+li#personalizado{
+    cursor: url('./img/logo-16.png'), pointer;
+}

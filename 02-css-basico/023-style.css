@@ -1,0 +1,17 @@
+a{
+    background-color: cornflowerblue;
+    color: beige;
+    padding: 20px;
+    font-size: 5em;
+    text-decoration: none;
+    border-radius: 10px;
+}
+a:visited{
+    background-color: rgb(40, 93, 192);
+}
+a:hover{
+    padding: 30px;
+}
+a:active{
+    background-color: gray;
+}
