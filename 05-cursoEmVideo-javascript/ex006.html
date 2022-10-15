@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Manipulando o DOM</h1>
+    <p id="phrase">aqui vai o resultado</p>
+    <div id="msg">Clique em mim</div>
+    <p>Aprendendo a usar o <strong>DOM</strong> em javascript.</p>
+    <script>
+        window.document.write(window.document.characterSet);
+        let pagagrafo2 = document.getElementsByTagName('p')[1];
+        window.document.write(pagagrafo2.innerText);
+        window.document.write(pagagrafo2.innerHTML);
+        pagagrafo2.style.color = 'blue'
+
+        let div = document.getElementById('msg');
+        div.style.backgroundColor = "green";
+        div.innerText = "Estou aguardando...";
+
+        let p1 = document.querySelector('p#phrase');
+        p1.style.color = "yellow"
+    </script>
+</body>
+</html>
