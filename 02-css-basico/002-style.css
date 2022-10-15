@@ -1,15 +1,14 @@
 p{
-    color: pink;
-    background-color: yellow;
-}
-#paragrafo1{
-    color: red;
-    background-color: transparent;
-}
-.fundo-azul{
-    color: aquamarine;
-    background-color: crimson;
-}
-.texto-branco{
-    color: white;
-}
+            color: pink;
+            background-color: yellow;
+        }
+        #vw{
+            color: red;
+            background-color: white;
+        }
+        .v{
+            background-color: red;
+        }
+        .w{
+            color: white;
+        }
