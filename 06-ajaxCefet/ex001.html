@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Requisições Assíncronas</h1>
+        <nav>
+            <a id="l1" href="#">Link 01</a>
+            <a id="l2" href="#">Link 02</a>
+            <a id="l3" href="#">Link 03</a>
+        </nav>
+        <div class="conteudo">
+
+        </div>
+    </header>
+    <script>
+        //Recuperar a div e os links
+        const $divConteudo = document.querySelector('.conteudo');
+
+        const $link1 = document.querySelector('#l1');
+        const $link2 = document.querySelector('#l2');
+        const $link3 = document.querySelector('#l3');
+        //Primeiro passo criar objeto Ajax
+        let xhr = new XMLHttpRequest();
+        $link1.addEventListener('click', carregar);
+
+        function carregar(){
+            //Abra a conexão, qual o método, qual conteúdo quero buscar
+            //Nessa parte a conexão foi preparada, mas não enviada
+            //Verificar no console
+            console.log(xhr.readyState);
+            xhr.open('GET', 'ex001-cont1.html');
+            //Verificar no console
+            console.log(xhr.readyState);
+
+            //A cada mudança de estdado do objeto ajax alguma coisa é executada
+            xhr.onreadystatechange = function(){
+                console.log(xhr.readyState);
+
+                if(xhr.readyState===4 && xhr.status===200){
+                    console.log('Requisicao bem sucedida recurso encontrado!');
+                    $divConteudo.innerHTML = xhr.responseText;
+                }
+
+                if(xhr.readyState===4 && xhr.status===404){
+                    console.log('Requisicao bem sucedida porém recurso não encontrado!');
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
