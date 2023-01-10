@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Site</title>
+    <title>Document</title>
     <style>
         *{
             font-family: Arial, Helvetica, sans-serif;
@@ -45,84 +45,64 @@
     </header>
     <section>
         <div>
-            <p>Ano de nascimento: 
-                <input type="number" name="txtano" id="txtano" min="0">
-            </p>
-            <p>Sexo:
-                <input type="radio" name="radsex" id="mas" checked>
-                <label for="masc">Masculino</label>
-                <input type="radio" name="radsex" id="fem">
-                <label for="fem">Feminino</label>
+            <p>
+                Ano de nascimento:
+                <input type="number" name="nascimento" id="nascimento">
             </p>
             <p>
-                <input type="button" value="Verificar" id="verificar">
+                Sexo:
+                <input type="radio" name="inputSex" id="masc" checked>
+                <label for="masc">Masculino</label>
+                <input type="radio" name="inputSex" id="fem">
+                <label for="fem">Feminino</label>
             </p>
+            <input type="button" value="Verificar" id="ver">
         </div>
         <div id="resultado">
-            Preencha os campos acima para ver o resultado
+            <p>Preencha os campos para ver o resultado</p>
         </div>
     </section>
     <footer>
         <p>&copy; CursoEmVideo</p>
     </footer>
-
-
-
-
-
     <script>
-        let botaoVerificar = document.getElementById('verificar');
+        let botao = document.querySelector('#ver');
+        let resultado = document.querySelector('#resultado');
+        botao.addEventListener('click', verificar);
 
-        botaoVerificar.addEventListener('click', verificar);
-        function verificar() {
+        function carregarImagem(idade, genero){
+            let imagem = document.createElement('img');
+            if(idade<=12){
+                imagem.setAttribute('src', `./img/crianca-${genero}.jpg`);
+            } else if(idade<=21){
+                imagem.setAttribute('src', `./img/jovem-${genero}.jpg`);
+            } else if(idade<=60){
+                imagem.setAttribute('src', `./img/adulto-${genero}.jpg`);
+            } else{
+                imagem.setAttribute('src', `./img/velho-${genero}.jpg`);
+            }
+            resultado.appendChild(imagem);
+        }
+
+        function verificar(){
+            let inputNascimento = document.querySelector('#nascimento');
             let data = new Date();
-            let ano = data.getFullYear();
-            let inputAnoDeNascimento = document.getElementById('txtano');
-            let resultado = document.getElementById('resultado');
-
-            if (inputAnoDeNascimento.value.length == 0 || inputAnoDeNascimento.value > ano){
-                window.alert('[Erro] Verifique os dados e tente novamente');
-            } else {
-                let inputGenero = document.getElementsByName('radsex');
-                let idade = ano - Number(inputAnoDeNascimento.value);
-                console.log(idade);
+            let anoAtual = data.getFullYear();
+            if(inputNascimento.value.length==0 || inputNascimento.value>anoAtual){
+                alert('[Erro] Verifique os dados e tente novamente');
+                inputNascimento.value = '';
+                inputNascimento.focus();
+            } else{
+                let idade = anoAtual - inputNascimento.value;
+                let campoGenero = document.getElementsByName('inputSex');
                 let genero = '';
-                let imagem = document.createElement('img');
-                imagem.setAttribute('id', 'foto');
-                if(inputGenero[0].checked) {
-                    genero = 'Homem';
-                    if (idade <= 10) {
-                        //Criança
-                        imagem.setAttribute('src', './img/crianca-homem.jpg');
-                    } else if(idade <= 21){
-                        // Jovem
-                        imagem.setAttribute('src', './img/jovem-homem.jpg');
-                    } else if(idade < 60) {
-                        //Adulto
-                        imagem.setAttribute('src', './img/adulto-homem.jpg');
-                    } else {
-                        //Idoso
-                        imagem.setAttribute('src', './img/velho-homem.jpg');
-                    }
-                } else {
-                    genero = 'Mulher';
-                    if (idade <= 10) {
-                        //Criança
-                        imagem.setAttribute('src', './img/crianca-mulher.jpg');
-                    } else if(idade <= 21){
-                        // Jovem
-                        imagem.setAttribute('src', './img/jovem-mulher.jpg');
-                    } else if(idade < 60) {
-                        //Adulto
-                        imagem.setAttribute('src', './img/adulto-mulher.jpg');
-                    } else {
-                        //Idoso
-                        imagem.setAttribute('src', './img/velho-mulher.jpg');
-                    }
+                if(campoGenero[0].checked){
+                    genero = 'homem';
+                } else{
+                    genero = 'mulher';
                 }
-                console.log(genero);
-                resultado.innerHTML = `<p>${genero} com idade de ${idade} anos</p>`;
-                resultado.appendChild(imagem);
+                resultado.innerHTML = `<p>${genero.toUpperCase()} com ${idade} anos de idade.</p>`;
+                carregarImagem(idade, genero);
             }
         }
     </script>
